@@ -1,0 +1,15 @@
+<form [formGroup]="form">
+  <input formControlName="name" placeholder="Name">
+  <input formControlName="email" placeholder="Email">
+  <button type="button" (click)="save()">Save</button>
+</form>
+
+<hr>
+
+<ul>
+  <li *ngFor="let user of users">
+    {{ user.name }} - {{ user.email }}
+    <button (click)="edit(user)">Edit</button>
+    <button (click)="delete(user.id)">Delete</button>
+  </li>
+</ul>
